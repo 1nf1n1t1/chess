@@ -77,4 +77,6 @@ public class Chessman : MonoBehaviour
         yBoard = y;
     }
 
+
+
 }
