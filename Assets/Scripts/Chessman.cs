@@ -9,7 +9,7 @@ public class Chessman : MonoBehaviour
    public GameObject movePlate;
 
     //Position
-    private int xBoard=-1;
+    private int xBoard= -1;
     private int yBoard = -1;
 
     //Variable to keep track of "black" player or "white" player
@@ -23,9 +23,9 @@ public class Chessman : MonoBehaviour
 
     public void Activate()
     {
-        contoller = GameObject.FindGameObjectWithTag("GameContoller");
+        contoller = GameObject.FindGameObjectWithTag("GameController");
         //take the instantiated location and adjust the tranform
-       // SetCoords();
+        SetCoords();
 
         switch(this.name)
         {
@@ -45,7 +45,7 @@ public class Chessman : MonoBehaviour
 
         }
     }   
-    public void setCoords(){
+    public void SetCoords(){
         float x = xBoard;
         float y = yBoard;
         x *= 0.66f;
@@ -56,5 +56,25 @@ public class Chessman : MonoBehaviour
         this.transform.position = new Vector3(x, y, -1.0f);
     }
 
+    public int GetXBoard()
+    {
+        return xBoard;
+
+    }
+
+    public int GetYBoard()
+    {
+        return yBoard;
+    }
+
+    public void SetXBoard(int x)
+    {
+        xBoard = x;
+    }
+
+    public void SetYBoard(int y)
+    {
+        yBoard = y;
+    }
 
 }

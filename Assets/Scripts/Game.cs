@@ -37,6 +37,26 @@ public class Game : MonoBehaviour
             SetPosition(playerBlack[i]);
             SetPosition(playerWhite[i]);
         }
+
+
+         GameObject Create (string name, int x, int y)
+        {
+            GameObject obj = Instantiate(chesspiece, new Vector3(0, 0, -1), Quaternion.identity);
+            Chessman cm = obj.GetComponent<Chessman>();
+            cm.name = name;
+            cm.SetXBoard(x);
+            cm.SetYBoard(y);
+            cm.Activate();
+            return obj;
+        }
+
+         void SetPosition(GameObject obj)
+        {
+            Chessman cm = obj.GetComponent<Chessman>();
+            positions[cm.GetXBoard(), cm.GetYBoard()] = obj;
+        }
     }
+
+    
 }
     
